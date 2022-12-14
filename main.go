@@ -13,6 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer tweetsFile.Close()
 
 	lines, err := tokenizer.ReadLines(tweetsFile)
 	if err != nil {
@@ -32,6 +33,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer tokensFile.Close()
 
 	tokens := []string{}
 
@@ -48,6 +50,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer soundexFile.Close()
 
 	soundexToPersian := map[string]map[string]struct{}{}
 	soundexes := map[string]struct{}{}
