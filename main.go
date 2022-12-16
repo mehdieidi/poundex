@@ -38,12 +38,12 @@ func main() {
 	tokens := []string{}
 
 	for _, t := range tweets {
-		fileTokens, err := tokenizer.Tokenize(tokensFile, t.Text)
+		lineTokens, err := tokenizer.Tokenize(tokensFile, t.Text)
 		if err != nil {
 			fmt.Printf("err: %+v\n", err)
 			continue
 		}
-		tokens = append(tokens, fileTokens...)
+		tokens = append(tokens, lineTokens...)
 	}
 
 	soundexFile, err := os.OpenFile("output/soundex.txt", os.O_CREATE|os.O_RDWR, 0666)
