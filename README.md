@@ -1,2 +1,3 @@
 # poundex
-Persian soundex algorithm phonetic spell correction.
+
+Persian soundex algorithm for phonetic spell correction.
